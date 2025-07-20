@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<pybind/pybind11.h>
 
 std::string transcribe(std::string DNA) {
    std::string mRNAstrand;
@@ -20,4 +21,7 @@ std::string transcribe(std::string DNA) {
       }
    }
    return mRNAstrand;
+}
+PYBIND11_MODULE(genetics, genetics) {
+   genetics.def("transcibe", &transcribe, "A function that transcriibes a DNA Strand into an mRNA Strand");
 }

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.15)
+project("basic_genetics_project")
+set(PYBIND11_FINDPYTHON ON)
+find_package(pybind11 CONFIG REQUIRED)
+pybdind11_add_module("genetics" genetics.cpp)
+install(TARGETS transcription DESTINATION ../code)
